@@ -5,4 +5,4 @@ build-nocache:
 	docker build --no-cache --tag ff .
 
 start:
-	docker run -it --rm -v $(PWD)/homedir:/home/user/ -p 127.0.0.1:5900:5900 ff
+	docker run -it --rm -v $(PWD)/homedir:/home/user/ -p 5900:5900 ff
