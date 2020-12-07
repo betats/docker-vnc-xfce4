@@ -10,3 +10,7 @@ build-nocache:
 
 dev-start:
 	docker run -it --rm -e TZ=Asia/Tokyo -v $(PWD)/homedir:/home/user/ -p 5900:5900 ff
+
+.PHONY: backup
+backup: homedir
+	rsync -a homedir backup/homedir$(shell date +%Y%m%d%H%M)
